@@ -6,7 +6,7 @@ log.basicConfig(
     format='%(asctime)s: %(levelname)s [%(filename)s:%(lineno)s] %(message)s',  # Formato de los mensajes
     datefmt='%I:%M:%S %p',                                                      # Formato de la fecha y la hora
     handlers=[                                                                  # Manejadores de los mensajes
-        log.FileHandler('capa_datos.log'),                                      # Archivo donde se almacenan los mensajes
+        log.FileHandler('capa_datos.log', encoding='utf-8'),                    # Archivo donde se almacenan los mensajes
         log.StreamHandler()                                                     # Consola donde se muestran los mensajes
     ]
 )
