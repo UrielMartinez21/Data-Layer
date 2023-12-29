@@ -1,16 +1,16 @@
 class Persona:
     def __init__(self, id_persona = None, nombre = None, apellido = None, email = None):
-        self.id_persona = id_persona
-        self.nombre = nombre
-        self.apellido = apellido
-        self.email = email
+        self._id_persona = id_persona
+        self._nombre = nombre
+        self._apellido = apellido
+        self._email = email
     
     def __str__(self):
         return f"""
-        [+] Id Persona: {self.id_persona}
-        [+] Nombre: {self.nombre}
-        [+] Apellido: {self.apellido}
-        [+] Email: {self.email}
+        [+] Id Persona: {self._id_persona}
+        [+] Nombre: {self._nombre}
+        [+] Apellido: {self._apellido}
+        [+] Email: {self._email}
         """
     
     @property
@@ -44,3 +44,11 @@ class Persona:
     @email.setter
     def email(self, email):
         self._email = email
+
+if __name__ == "__main__":
+    persona1 = Persona(1, 'Juan', 'Perez', 'juan@gmail.com')
+    print(persona1)
+
+    persona1.nombre = 'Juan editado'
+    print(persona1)
+    print(f"[+] El nombre es: {persona1.nombre}")
