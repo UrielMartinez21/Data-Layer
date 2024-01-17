@@ -8,10 +8,10 @@ class PersonaDAO:
     DAO (Data Access Object)
     Va a contener todos los métodos CRUD
     """
-    _SELECCIONAR = 'SELECT * FROM persona ORDER BY id_persona'
+    _SELECCIONAR = 'SELECT * FROM persona ORDER BY id'
     _INSERTAR = 'INSERT INTO persona(nombre, apellido, email) VALUES(%s, %s, %s)'
-    _ACTUALIZAR = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s'
-    _ELIMINAR = 'DELETE FROM persona WHERE id_persona=%s'
+    _ACTUALIZAR = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id=%s'
+    _ELIMINAR = 'DELETE FROM persona WHERE id=%s'
 
     @classmethod
     def seleccionar(cls):
@@ -52,7 +52,7 @@ class PersonaDAO:
 
 if __name__ == "__main__":
     # Insertar un registro
-    persona = Persona(nombre='Pool', apellido='pool', email='pool@gmail.com')
+    persona = Persona(nombre='P', apellido='p', email='p@gmail.com')
     personas_insertadas = PersonaDAO.insertar(persona)
     log.debug(f"Personas insertadas: {personas_insertadas}")
 
